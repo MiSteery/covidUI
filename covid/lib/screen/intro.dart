@@ -22,7 +22,15 @@ class _IntroState extends State<Intro> {
         end: Alignment.bottomCenter,
         ),
         ),
-        
+       child: Stack(children:<Widget>[
+         Padding(padding: const EdgeInsets.only(top: 50),
+         child: Align(
+           alignment: Alignment.topCenter,
+           child: Image.asset('assets/images/logo.png'),
+         ),
+         ),
+       ], 
+       )
       ),
     );
   }
