@@ -41,13 +41,45 @@ class _IntroState extends State<Intro> {
                       children: [
                         Text(
                           'Corona Virus disease (COVID-19)',
-                          style: TextStyle(fontSize: 24, color: Colors.white, fontWeight: FontWeight.bold),
+                          style: TextStyle(
+                              fontSize: 24,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold),
                         ),
-                         Text(
+                        Text(
                           'is an infection disease caused by a new/virus',
                           style: TextStyle(fontSize: 24, color: Colors.white),
                           textAlign: TextAlign.center,
                         ),
+                        SizedBox(
+                          height: 25,
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(50),
+                              ),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black38,
+                                  offset: Offset(1, 1),
+                                  spreadRadius: 1,
+                                  blurRadius: 3,
+                                )
+                              ]),
+                          width: MediaQuery.of(context).size.width * .85,
+                          height: 60,
+                          child: Center(
+                            child: Text(
+                              'GET STARTED',
+                              style: TextStyle(
+                                  color: AppColors.mainColor,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20),
+                            ),
+                          ),
+                        )
                       ],
                     ),
                   ))
