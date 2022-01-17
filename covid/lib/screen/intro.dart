@@ -26,6 +26,8 @@ class _IntroState extends State<Intro> {
           child: Stack(
             children: <Widget>[
               buildHeader(),
+              Image.asset('assets/images/virus.png'),
+              Image.asset('assets/images/person.png'),
               buildFooter(context),
             ],
           )),
