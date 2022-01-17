@@ -1,5 +1,7 @@
-import 'package:covid/core/contst.dart';
 import 'package:flutter/material.dart';
+
+import 'package:covid/core/contst.dart';
+import 'package:covid/screen/home.dart';
 
 class Intro extends StatefulWidget {
   @override
@@ -80,29 +82,38 @@ class _IntroState extends State<Intro> {
             SizedBox(
               height: 25,
             ),
-            Container(
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(50),
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) => Home(),
                   ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black38,
-                      offset: Offset(1, 1),
-                      spreadRadius: 1,
-                      blurRadius: 3,
-                    )
-                  ]),
-              width: MediaQuery.of(context).size.width * .85,
-              height: 60,
-              child: Center(
-                child: Text(
-                  'GET STARTED',
-                  style: TextStyle(
-                      color: AppColors.mainColor,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20),
+                );
+              },
+              child: Container(
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(50),
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black38,
+                        offset: Offset(1, 1),
+                        spreadRadius: 1,
+                        blurRadius: 3,
+                      )
+                    ]),
+                width: MediaQuery.of(context).size.width * .85,
+                height: 60,
+                child: Center(
+                  child: Text(
+                    'GET STARTED',
+                    style: TextStyle(
+                        color: AppColors.mainColor,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20),
+                  ),
                 ),
               ),
             )
