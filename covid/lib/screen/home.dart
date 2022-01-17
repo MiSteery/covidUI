@@ -15,17 +15,46 @@ class _HomeState extends State<Home> {
       body: Column(
         children: [
           Container(
-              decoration: BoxDecoration(
-                  color: AppColors.mainColor,
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(20),
-                    bottomRight: Radius.circular(20),
-                  )),
-              child: Stack(
-                children: <Widget>[
-                  buildHeader(),
-                ],
-              ))
+            decoration: BoxDecoration(
+              color: AppColors.mainColor,
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(20),
+                bottomRight: Radius.circular(20),
+              ),
+            ),
+            padding: EdgeInsetsDirectional.only(top: 25, bottom: 30),
+            child: Stack(
+              children: <Widget>[
+                Image.asset('assets/images/virus2.png'),
+                buildHeader(),
+              ],
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                RichText(
+                  text: TextSpan(
+                      text: 'Symptoms of ',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 24,
+                        color: Colors.black87,
+                      ),
+                      children: [
+                        TextSpan(
+                          text: 'COVID-19',
+                          style: TextStyle(
+                            color: AppColors.mainColor,
+                          ),
+                        ),
+                      ]),
+                ),
+              ],
+            ),
+          )
         ],
       ),
     );
