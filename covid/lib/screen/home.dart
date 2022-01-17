@@ -66,18 +66,40 @@ class _HomeState extends State<Home> {
                   SizedBox(
                     height: 25,
                   ),
-                  RaisedButton(
-                    color: Colors.blue,
-                    onPressed: () {},
-                    child: Text(
-                      'EMERGENCY',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(16),
+                  Row(
+                    children: <Widget>[
+                      Expanded(
+                        child: RaisedButton(
+                          color: Colors.blue,
+                          onPressed: () {},
+                          child: Text(
+                            'DONATE NOW',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(16),
+                            ),
+                          ),
+                        ),
                       ),
-                    ),
+                      SizedBox(width: 20,),
+                         Expanded(
+                        child: RaisedButton(
+                          color: Colors.red,
+                          onPressed: () {},
+                          child: Text(
+                            'EMERGENCY',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(16),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
                   )
                 ],
               ),
