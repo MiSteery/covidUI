@@ -37,21 +37,51 @@ class _HomeState extends State<Home> {
               children: <Widget>[
                 RichText(
                   text: TextSpan(
-                      text: 'Symptoms of ',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 24,
-                        color: Colors.black87,
+                    text: 'Symptoms of ',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 24,
+                      color: Colors.black87,
+                    ),
+                    children: [
+                      TextSpan(
+                        text: 'COVID-19',
+                        style: TextStyle(
+                          color: AppColors.mainColor,
+                        ),
                       ),
-                      children: [
-                        TextSpan(
-                          text: 'COVID-19',
-                          style: TextStyle(
-                            color: AppColors.mainColor,
+                    ],
+                  ),
+                ),
+                Container(
+                  height: 150,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: <Widget>[
+                      Container(
+                        width: 100,
+                        height: 100,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(15),
+                          ),
+                          gradient: LinearGradient(
+                            colors: [
+                              AppColors.mainColor.withOpacity(.01),
+                              Colors.white
+                            ],
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                          ),
+                          border: Border.all(color: Colors.white),
+                          image: DecorationImage(
+                            image: AssetImage('assets/images/1.png'),
                           ),
                         ),
-                      ]),
-                ),
+                      )
+                    ],
+                  ),
+                )
               ],
             ),
           )
