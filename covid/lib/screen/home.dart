@@ -54,31 +54,16 @@ class _HomeState extends State<Home> {
                   ),
                 ),
                 Container(
-                  height: 150,
+                  height: 130,
                   child: ListView(
                     scrollDirection: Axis.horizontal,
+                    padding: EdgeInsets.only(left: 16),
+                    physics: BouncingScrollPhysics(),
                     children: <Widget>[
-                      Container(
-                        width: 100,
-                        height: 100,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(15),
-                          ),
-                          gradient: LinearGradient(
-                            colors: [
-                              AppColors.mainColor.withOpacity(.01),
-                              Colors.white
-                            ],
-                            begin: Alignment.topCenter,
-                            end: Alignment.bottomCenter,
-                          ),
-                          border: Border.all(color: Colors.white),
-                          image: DecorationImage(
-                            image: AssetImage('assets/images/1.png'),
-                          ),
-                        ),
-                      )
+                      buildSymptomItem("assets/images/1.png", "Fever"),
+                      buildSymptomItem("assets/images/2.png", "Dry Cough"),
+                      buildSymptomItem("assets/images/3.png", "Headache"),
+                      buildSymptomItem("assets/images/4.png", "Breathless")
                     ],
                   ),
                 )
@@ -87,6 +72,52 @@ class _HomeState extends State<Home> {
           )
         ],
       ),
+    );
+  }
+
+  Widget buildSymptomItem(String path, String text) {
+    return Column(
+      children: <Widget>[
+        Container(
+          width: 100,
+          height: 100,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.all(
+              Radius.circular(15),
+            ),
+            gradient: LinearGradient(
+              colors: [
+                AppColors.backgroundColor,
+                Colors.white,
+              ],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+            ),
+            border: Border.all(color: Colors.white),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black26,
+                offset: Offset(1, 1),
+                spreadRadius: 1,
+                blurRadius: 3,
+              ),
+            ],
+          ),
+          padding: EdgeInsets.only(top: 15),
+          child: Image.asset(path),
+          margin: EdgeInsets.only(right: 20),
+        ),
+        SizedBox(
+          height: 7,
+        ),
+        Text(
+          text,
+          style: TextStyle(
+            color: Colors.black87,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ],
     );
   }
 
