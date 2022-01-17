@@ -82,11 +82,81 @@ class _HomeState extends State<Home> {
                     ),
                   ),
                 ),
+                SizedBox(
+                  height: 20,
+                ),
+                Container(
+                    height: 100,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      padding: EdgeInsets.only(left: 16),
+                      physics: BouncingScrollPhysics(),
+                      children: <Widget>[
+                        buildPrevention(
+                            "assets/images/a10.png", "WASH", "hands often"),
+                        buildPrevention(
+                            "assets/images/a4.png", "COVER", "your cough"),
+                        buildPrevention(
+                            "assets/images/a6.png", "ALWAYS", "clean"),
+                        buildPrevention("assets/images/a9.png", "USE", "mask"),
+                      ],
+                    ))
               ],
             ),
           )
         ],
       ),
+    );
+  }
+
+  Widget buildPrevention(String path, String text1, String text2) {
+    return Column(
+      children: <Widget>[
+        Container(
+          width: 170,
+          height: 70,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.all(
+              Radius.circular(15),
+            ),
+            border: Border.all(color: Colors.white),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black12,
+                offset: Offset(1, 1),
+                spreadRadius: 1,
+                blurRadius: 1,
+              ),
+            ],
+          ),
+          padding: EdgeInsets.all(12),
+          child: Row(
+            children: <Widget>[
+              Image.asset(path),
+              SizedBox(width: 10),
+              RichText(
+                text: TextSpan(
+                    text: '$text1\n',
+                    style: TextStyle(
+                      color: AppColors.mainColor,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    children: [
+                      TextSpan(
+                          text: text2,
+                          style: TextStyle(
+                            color: Colors.black87,
+                            fontWeight: FontWeight.bold,
+                          ))
+                    ]),
+              )
+            ],
+          ),
+          margin: EdgeInsets.only(right: 20),
+        ),
+        SizedBox(height: 7),
+      ],
     );
   }
 
