@@ -53,6 +53,7 @@ class _HomeState extends State<Home> {
                     ],
                   ),
                 ),
+                SizedBox(height: 20),
                 Container(
                   height: 130,
                   child: ListView(
@@ -66,7 +67,21 @@ class _HomeState extends State<Home> {
                       buildSymptomItem("assets/images/4.png", "Breathless")
                     ],
                   ),
-                )
+                ),
+                SizedBox(height: 20),
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 16,
+                  ),
+                  child: Text(
+                    'Previntion',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 24,
+                      color: Colors.black87,
+                    ),
+                  ),
+                ),
               ],
             ),
           )
