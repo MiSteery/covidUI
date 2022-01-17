@@ -1,6 +1,7 @@
+import 'package:flutter/material.dart';
+
 import 'package:covid/core/contst.dart';
 import 'package:covid/screen/home.dart';
-import 'package:flutter/material.dart';
 
 class Intro extends StatefulWidget {
   @override
