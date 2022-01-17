@@ -22,7 +22,16 @@ class _HomeState extends State<Home> {
               )),
           child: Column(
             children:<Widget> [
-              Padding(
+              buildAppBar(),
+            
+            ],
+          ),
+        )
+      ],
+    ));
+  }
+  Widget buildAppBar(){
+    return   Padding(
                 padding: EdgeInsets.only(top: 25),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -48,11 +57,6 @@ class _HomeState extends State<Home> {
                     )
                   ],
                 ),
-              )
-            ],
-          ),
-        )
-      ],
-    ));
+              );
   }
 }
