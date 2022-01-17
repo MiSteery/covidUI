@@ -1,5 +1,4 @@
 import 'package:covid/core/contst.dart';
-import 'package:covid/core/flutter_icon.dart';
 import 'package:covid/widget/customeAppbar.dart';
 import 'package:flutter/material.dart';
 
@@ -30,7 +29,10 @@ class _HomeState extends State<Home> {
               ],
             ),
           ),
-          Container(
+          SizedBox(
+            height: 25,
+          ),
+          Padding(
             padding: EdgeInsets.symmetric(horizontal: 16),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -86,21 +88,86 @@ class _HomeState extends State<Home> {
                   height: 20,
                 ),
                 Container(
-                    height: 100,
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      padding: EdgeInsets.only(left: 16),
-                      physics: BouncingScrollPhysics(),
-                      children: <Widget>[
-                        buildPrevention(
-                            "assets/images/a10.png", "WASH", "hands often"),
-                        buildPrevention(
-                            "assets/images/a4.png", "COVER", "your cough"),
-                        buildPrevention(
-                            "assets/images/a6.png", "ALWAYS", "clean"),
-                        buildPrevention("assets/images/a9.png", "USE", "mask"),
+                  height: 100,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    padding: EdgeInsets.only(left: 16),
+                    physics: BouncingScrollPhysics(),
+                    children: <Widget>[
+                      buildPrevention(
+                          "assets/images/a10.png", "WASH", "hands often"),
+                      buildPrevention(
+                          "assets/images/a4.png", "COVER", "your cough"),
+                      buildPrevention(
+                          "assets/images/a6.png", "ALWAYS", "clean"),
+                      buildPrevention("assets/images/a9.png", "USE", "mask"),
+                    ],
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {},
+                  child: Container(
+                    height: 90,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(15),
+                      ),
+                      border: Border.all(color: Colors.white),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black12,
+                          offset: Offset(1, 1),
+                          spreadRadius: 1,
+                          blurRadius: 1,
+                        )
                       ],
-                    ))
+                    ),
+                    padding: EdgeInsets.all(12),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Image.asset("assets/images/map.png"),
+                        SizedBox(
+                          width: 25,
+                        ),
+                        RichText(
+                          text: TextSpan(
+                            text: "CASES\n",
+                            style: TextStyle(
+                              color: AppColors.mainColor,
+                              fontWeight: FontWeight.bold,
+                              height: 1.3,
+                            ),
+                            children: [
+                              TextSpan(
+                                text: "Overview Worldwide\n",
+                                style: TextStyle(
+                                  color: Colors.black87,
+                                  fontWeight: FontWeight.normal,
+                                ),
+                              ),
+                              TextSpan(
+                                text: "21.118.594 confirmed",
+                                style: TextStyle(
+                                  color: Colors.black87,
+                                  fontWeight: FontWeight.normal,
+                                  fontSize: 10,
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                        Expanded(child: SizedBox()),
+                        IconButton(
+                          icon: Icon(Icons.arrow_forward_ios),
+                          onPressed: null,
+                        ),
+                      ],
+                    ),
+                    margin: EdgeInsets.symmetric(horizontal: 16),
+                  ),
+                )
               ],
             ),
           )
