@@ -9,6 +9,7 @@ class Intro extends StatefulWidget {
 class _IntroState extends State<Intro> {
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
           width: MediaQuery.of(context).size.width,
@@ -26,8 +27,20 @@ class _IntroState extends State<Intro> {
           child: Stack(
             children: <Widget>[
               buildHeader(),
-              Image.asset('assets/images/virus.png'),
-              Image.asset('assets/images/person.png'),
+              Align(
+                alignment: Alignment.center,
+                child: Container(
+                  width: size.width * 0.75,
+                  child: Image.asset('assets/images/virus.png'),
+                ),
+              ),
+              Positioned(
+                top: size.height * 0.25,
+                right: 25,
+                child: Container(
+                    width: size.width * 0.5,
+                    child: Image.asset('assets/images/person.png')),
+              ),
               buildFooter(context),
             ],
           )),
