@@ -25,7 +25,15 @@ class _HomeState extends State<Home> {
               Padding(
                 padding: EdgeInsets.only(top: 25),
                 child: Row(
-                  children: [Icon(FlutterIcons.menu)],
+                  children: [
+                    IconButton(                     
+                      icon: Icon(
+                        FlutterIcons.menu,
+                        color: Colors.white,
+                      ),
+                       onPressed: () {},
+                    )
+                  ],
                 ),
               )
             ],
