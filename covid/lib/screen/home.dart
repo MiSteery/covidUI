@@ -26,7 +26,6 @@ class _HomeState extends State<Home> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 16),
                     child: Text(
@@ -67,6 +66,19 @@ class _HomeState extends State<Home> {
                   SizedBox(
                     height: 25,
                   ),
+                  RaisedButton(
+                    color: Colors.blue,
+                    onPressed: () {},
+                    child: Text(
+                      'EMERGENCY',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(16),
+                      ),
+                    ),
+                  )
                 ],
               ),
             ],
