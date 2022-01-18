@@ -191,11 +191,7 @@ class _StatisticPageState extends State<StatisticPage> {
             Container(
               width: 150,
               height: 150,
-              decoration: BoxDecoration(
-                  color: Colors.blueAccent,
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(100),
-                  )),
+              child: DonutPieChart.withSampleData(),
             ),
             SizedBox(width: 25),
             Column(
