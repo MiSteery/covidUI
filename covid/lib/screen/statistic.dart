@@ -1,4 +1,5 @@
 import 'package:covid/core/contst.dart';
+import 'package:covid/widget/customeAppbar.dart';
 import 'package:flutter/material.dart';
 
 class StatisticPage extends StatefulWidget {
@@ -29,6 +30,7 @@ class _StatisticPageState extends State<StatisticPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                CustomAppBarWidget(),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16),
                   child: Text(
