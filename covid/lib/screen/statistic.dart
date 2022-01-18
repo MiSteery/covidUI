@@ -42,11 +42,18 @@ class _StatisticPageState extends State<StatisticPage> {
                     ),
                   ),
                 ),
+                SizedBox(height: 25,),
+                buildStatistic(),
               ],
             ),
           )
         ],
       ),
+    );
+  }
+  Widget buildStatistic(){
+    return Container(
+      
     );
   }
 }
