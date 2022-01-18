@@ -1,8 +1,10 @@
+import 'package:flutter/material.dart';
+
 import 'package:covid/core/contst.dart';
 import 'package:covid/core/flutter_icon.dart';
 import 'package:covid/widget/chart.dart';
 import 'package:covid/widget/customeAppbar.dart';
-import 'package:flutter/material.dart';
+
 
 class StatisticPage extends StatefulWidget {
   @override
