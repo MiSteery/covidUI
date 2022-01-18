@@ -15,14 +15,33 @@ class _StatisticPageState extends State<StatisticPage> {
           Container(
             height: 250,
             decoration: BoxDecoration(
-                color: AppColors.mainColor,
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(25),
-                  bottomRight: Radius.circular(25),
+              color: AppColors.mainColor,
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(25),
+                bottomRight: Radius.circular(25),
+              ),
+            ),
+            padding: EdgeInsets.only(top: 25),
+            child: Image.asset('assets/images/virus2.png'),
+          ),
+          Container(
+            padding: EdgeInsets.only(top: 25),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16),
+                  child: Text(
+                    'STATISTICS',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 32,
+                    ),
+                  ),
                 ),
-                ),
-                padding: EdgeInsets.only(top:25),
-                child: Image.asset('assets/images/virus2.png'),
+              ],
+            ),
           )
         ],
       ),
