@@ -48,7 +48,7 @@ class _StatisticPageState extends State<StatisticPage> {
                   height: 25,
                 ),
                 buildStatistic(),
-           Padding(
+                Padding(
                   padding: EdgeInsets.all(16),
                   child: Row(
                     children: <Widget>[
@@ -64,6 +64,28 @@ class _StatisticPageState extends State<StatisticPage> {
                     ],
                   ),
                 ),
+                SizedBox(height: 16),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16),
+                  child: RichText(
+                    text: TextSpan(
+                      text: "Global Cases of ",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 24,
+                        color: Colors.black87,
+                      ),
+                      children: [
+                        TextSpan(
+                          text: "COVID 19",
+                          style: TextStyle(
+                            color: AppColors.mainColor,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                )
               ],
             ),
           )
@@ -72,7 +94,7 @@ class _StatisticPageState extends State<StatisticPage> {
     );
   }
 
- Widget _buildGender(IconData icon, Color color, String title, String value) {
+  Widget _buildGender(IconData icon, Color color, String title, String value) {
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
