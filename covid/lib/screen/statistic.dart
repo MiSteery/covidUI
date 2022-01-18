@@ -42,7 +42,9 @@ class _StatisticPageState extends State<StatisticPage> {
                     ),
                   ),
                 ),
-                SizedBox(height: 25,),
+                SizedBox(
+                  height: 25,
+                ),
                 buildStatistic(),
               ],
             ),
@@ -51,9 +53,25 @@ class _StatisticPageState extends State<StatisticPage> {
       ),
     );
   }
-  Widget buildStatistic(){
+
+  Widget buildStatistic() {
     return Container(
-      
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.all(
+          Radius.circular(15),
+        ),
+        border: Border.all(color: Colors.white),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black12,
+            offset: Offset(1,1),
+            spreadRadius: 1,
+            blurRadius: 1,
+          )
+        ]
+      ),
+      margin: EdgeInsets.symmetric(horizontal: 16),
     );
   }
 }
