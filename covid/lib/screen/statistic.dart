@@ -85,7 +85,14 @@ class _StatisticPageState extends State<StatisticPage> {
                       ],
                     ),
                   ),
-                )
+                ),
+                Padding(
+                  padding: EdgeInsets.all(16),
+                  child: Container(
+                    height: 170,
+                    child: Center(child: Image.asset("assets/images/map.png")),
+                  ),
+                ),
               ],
             ),
           )
