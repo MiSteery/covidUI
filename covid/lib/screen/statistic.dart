@@ -81,13 +81,19 @@ class _StatisticPageState extends State<StatisticPage> {
             Container(
               width: 150,
               height: 150,
+              decoration: BoxDecoration(
+                  color: Colors.blueAccent,
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(100),
+                  )),
             ),
             SizedBox(width: 25),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 buildStatisticItem(Colors.blueAccent, 'Confirmed', '23,29,539'),
-                buildStatisticItem(Colors.yellowAccent, 'Recovered', '5,29,539'),
+                buildStatisticItem(
+                    Colors.yellowAccent, 'Recovered', '5,29,539'),
                 buildStatisticItem(Colors.redAccent, 'Deaths', ',1,60,171')
               ],
             )
