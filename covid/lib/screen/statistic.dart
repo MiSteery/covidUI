@@ -1,4 +1,6 @@
 import 'package:covid/core/contst.dart';
+import 'package:covid/core/flutter_icon.dart';
+import 'package:covid/widget/chart.dart';
 import 'package:covid/widget/customeAppbar.dart';
 import 'package:flutter/material.dart';
 
@@ -57,21 +59,68 @@ class _StatisticPageState extends State<StatisticPage> {
   Widget buildStatistic() {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.all(
-          Radius.circular(15),
-        ),
-        border: Border.all(color: Colors.white),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black12,
-            offset: Offset(1,1),
-            spreadRadius: 1,
-            blurRadius: 1,
-          )
-        ]
-      ),
+          color: Colors.white,
+          borderRadius: BorderRadius.all(
+            Radius.circular(15),
+          ),
+          border: Border.all(color: Colors.white),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black12,
+              offset: Offset(1, 1),
+              spreadRadius: 1,
+              blurRadius: 1,
+            )
+          ]),
       margin: EdgeInsets.symmetric(horizontal: 16),
+      padding: EdgeInsets.all(24),
+      child: Center(
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Container(
+              width: 150,
+              height: 150,
+            ),
+            SizedBox(width: 25),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                buildStatisticItem(Colors.blueAccent, 'Confirmed', '23,29,539'),
+                buildStatisticItem(Colors.yellowAccent, 'Recovered', '5,29,539'),
+                buildStatisticItem(Colors.redAccent, 'Deaths', ',1,60,171')
+              ],
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget buildStatisticItem(Color color, String title, String value) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.end,
+      children: [
+        Icon(
+          FlutterIcons.label,
+          size: 50,
+          color: color,
+        ),
+        Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              title,
+              style: TextStyle(
+                color: Colors.black38,
+              ),
+            ),
+            SizedBox(height: 5),
+            Text(value)
+          ],
+        )
+      ],
     );
   }
 }
